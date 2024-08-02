@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-react-app-deployment
+  name: gemini-fe-app
   labels:
-    app: my-react-app
+    app: gemini-fe-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-react-app
+      app: gemini-fe-app
   template:
     metadata:
       labels:
-        app: my-react-app
+        app: gemini-fe-app
     spec:
       containers:
-      - name: my-react-app
+      - name: gemini-fe-app
         image: gcr.io/ica3-430922/gemini-fe:v1
         ports:
         - containerPort: 80
@@ -23,11 +23,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-react-app-service
+  name: gemini-fe-app
 spec:
   type: LoadBalancer
   selector:
-    app: my-react-app
+    app: gemini-fe-app
   ports:
     - protocol: TCP
       port: 80
