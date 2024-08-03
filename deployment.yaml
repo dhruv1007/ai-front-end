@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: gemini-fe-app
-        image: gcr.io/ica3-430922/gemini-fe:v1
+        image: gcr.io/$PROJECT_ID/gemini-fe:v1
         ports:
         - containerPort: 80
 ---
